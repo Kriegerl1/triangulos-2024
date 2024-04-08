@@ -58,20 +58,22 @@
             {
 
                 string definicaoTriangulo = "";
-                if (arestaA != arestaB && arestaB != arestaC)
-                {
 
-                    definicaoTriangulo = "Escaleno";
+                if ((arestaA + arestaB) < arestaC || (arestaB + arestaC) < arestaA || (arestaC + arestaA) < arestaB)
+                    if (arestaA != arestaB && arestaB != arestaC)
+                    {
 
-                }
-                else if (arestaA == arestaB && arestaB != arestaC || arestaB == arestaC && arestaC != arestaA || arestaC == arestaA && arestaA != arestaB)
-                {
-                    definicaoTriangulo = "Isóceles";
-                }
-                else
-                {
-                    definicaoTriangulo = "equilátero";
-                }
+                        definicaoTriangulo = "Escaleno";
+
+                    }
+                    else if (arestaA == arestaB && arestaB != arestaC || arestaB == arestaC && arestaC != arestaA || arestaC == arestaA && arestaA != arestaB)
+                    {
+                        definicaoTriangulo = "Isóceles";
+                    }
+                    else
+                    {
+                        definicaoTriangulo = "equilátero";
+                    }
 
                 Console.WriteLine($"O tringulo é caracterizado como: Triangulo {definicaoTriangulo}");
             }
