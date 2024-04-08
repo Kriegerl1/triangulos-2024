@@ -6,14 +6,23 @@
         {
             Console.WriteLine("Atividade caracterizador triangulos, Academia do Programador!\n");
 
-            triangulos novoTriangulo = new triangulos();
+            triangulos trianguloDoDesafio = new triangulos();
 
-            novoTriangulo.arestaA = inputValor<double>("Digite o tamanho da primeira aresta: ");
-            novoTriangulo.arestaB = inputValor<double>("Digite o tamanho da segunda aresta: ");
-            novoTriangulo.arestaC = inputValor<double>("Digite o tamanho da terceira aresta: ");
+            trianguloDoDesafio.arestaA = 5;
+            trianguloDoDesafio.arestaB = 5;
+            trianguloDoDesafio.arestaC = 3;
 
-            novoTriangulo.calculoTriangulo();
-            novoTriangulo.caracterizaTriangulo();
+            trianguloDoDesafio.calculoTriangulo();
+            trianguloDoDesafio.caracterizaTriangulo();
+            Console.WriteLine("\n\n\n");
+            triangulos meuTriangulo = new triangulos();
+
+            meuTriangulo.arestaA = inputValor<double>("Digite o tamanho da primeira aresta: ");
+            meuTriangulo.arestaB = inputValor<double>("Digite o tamanho da segunda aresta: ");
+            meuTriangulo.arestaC = inputValor<double>("Digite o tamanho da terceira aresta: ");
+
+            meuTriangulo.calculoTriangulo();
+            meuTriangulo.caracterizaTriangulo();
 
         }
 
@@ -56,10 +65,14 @@
 
             public void caracterizaTriangulo()
             {
-
-                string definicaoTriangulo = "";
+                string definicaoTriangulo;
 
                 if ((arestaA + arestaB) < arestaC || (arestaB + arestaC) < arestaA || (arestaC + arestaA) < arestaB)
+                {
+                    Console.WriteLine($"O triangulo é inválido!");
+                }
+                else
+                {
                     if (arestaA != arestaB && arestaB != arestaC)
                     {
 
@@ -75,9 +88,9 @@
                         definicaoTriangulo = "equilátero";
                     }
 
-                Console.WriteLine($"O tringulo é caracterizado como: Triangulo {definicaoTriangulo}");
+                    Console.WriteLine($"O triangulo é caracterizado como: Triangulo {definicaoTriangulo}");
+                }
             }
-
 
         }
 
