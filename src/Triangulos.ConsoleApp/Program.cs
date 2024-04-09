@@ -56,11 +56,12 @@
             public void calculoTriangulo()
             {
 
-                double calculoVolume = arestaA * arestaB * arestaC;
+                double calculoVolume = ((arestaA * 2) * arestaB * arestaC) / 2;
+                double calculoVolumeAbs = Math.Abs(calculoVolume);
 
                 double calculoArea = arestaA * arestaB;
-                Console.WriteLine($"A área do triangulo é: {calculoArea}cm²");
-                Console.WriteLine($"O volume do triangulo é: {calculoVolume}cm³");
+                Console.WriteLine($"A área do triangulo é: {calculoArea:N0}cm²");
+                Console.WriteLine($"O volume do triangulo é: {calculoVolumeAbs:N0}cm³");
             }
 
             public void caracterizaTriangulo()
